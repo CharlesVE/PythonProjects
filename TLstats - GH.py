@@ -1,8 +1,6 @@
 from os import listdir
 import pandas as pd
 
-stock_data = pd.read_csv(r'C:\Users\Charlie\Documents\CVE\Python\Python Data\SPY\SPY93 Data.csv',
-                         parse_dates=['Date'], index_col=0)
 
 def reformat(source):
     '''
@@ -272,6 +270,8 @@ def overlap_matrix(tl_dict):
     
     
 
+stock_data = pd.read_csv(r'C:\Users\Charlie\Documents\CVE\Python\Python Data\SPY\SPY93 Data.csv',
+                         parse_dates=['Date'], index_col=0)
 new_tl_dict = reformat(r'C:\Users\Charlie\Documents\CVE\Python\Current Projects\Portfolio Statistics\trade_lists')
 summary_table = summary(new_tl_dict)
 o_matrix = overlap_matrix(new_tl_dict)
